@@ -33,7 +33,7 @@ namespace CarChecker.Server
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false ) //disable confirm email for dev
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddIdentityServer()
